@@ -1,0 +1,55 @@
+body{
+    font-family: 'Teko', sans-serif;
+    margin:0;
+    padding:0;
+    background-image:url(./assets/Sunsetbeach.png);
+    background-size:cover;
+}
+.count-box{
+    display:inline-block;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+
+}
+.count-box span{
+    display:inline-block;
+    height:2.5em;
+    width:120px;
+    line-height:2.5em ;
+    text-align: center;
+    font-size:5em;
+    background: chocolate;
+    color:#00ff;
+    position:relative;
+    overflow:hidden;
+    -webkit-box-reflect: below 10px linear-gradient(transparent 40%, #000);
+}
+.count-box span:before{
+    content:"0\A\ 1\A 2\A\ 3\A\ 4\A\ 5\A\ 6\A\ 7\A 8\A 9";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    white-space: pre;  
+}
+.count-box span:nth-child(3):before{
+    animation:counting 1s steps(9) infinite;
+}
+.count-box span:nth-child(2):before{
+    animation:counting 10s steps(9) infinite;
+}
+.count-box span:nth-child(1):before{
+    animation:counting 100s steps(9) infinite;
+}
+
+@keyframes counting{
+    0%{
+        top:0;
+    }
+    100%{
+        top:-22.5em;
+    }
+}
